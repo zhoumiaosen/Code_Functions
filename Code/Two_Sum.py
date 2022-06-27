@@ -23,9 +23,14 @@ Input: nums = [3,3], target = 6
 Output: [0,1]
 """
 
-
-class Function:
+class Function_indices:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for i in range(0,len(nums)):
+            for j in range (i+1,len(nums)):
+                if nums[i] + nums[j] == target:
+                    return [i,j]
+                
+    def twoSum_1(self, nums: List[int], target: int) -> List[int]:
         ans = []
         
         for i in range(len(nums)):
@@ -57,10 +62,15 @@ Input: nums = [3,3], target = 6
 Output: [3,3]
 """
 
-class Function:
+class Function_elements:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for i in range(len(nums)):
+            for j in range(i+1,len(nums)):
+                if nums[i]+nums[j] == target:
+                    return [nums[i],nums[j]]
+    
+    def twoSum_1(self, nums: List[int], target: int) -> List[int]:
         ans = []
-        
         for i in range(len(nums)):
             for j in range(len(nums)):
                 if i!= j and nums[i]+nums[j] == target:
